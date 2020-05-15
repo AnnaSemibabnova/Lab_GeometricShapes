@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GeometricShapes.cpp" />
+    <ClCompile Include="triangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="circle.h" />
@@ -161,7 +162,6 @@
     <ClInclude Include="point.h" />
     <ClInclude Include="rectangle.h" />
     <ClInclude Include="shapes.h" />
-    <ClInclude Include="simple.h" />
     <ClInclude Include="square.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
