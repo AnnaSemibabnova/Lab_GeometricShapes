@@ -31,36 +31,36 @@ int main()
   Cont.Add(triangle);
   
   cout << "point:" << endl;
-  Cont.off(point);
+  Cont.Out(point);
   cout << endl;
   
   cout << "line:" << endl;
-  Cont.off(line);
+  Cont.Out(line);
   cout << endl;
   
   cout << "circle:" << endl;
-  Cont.off(circle);
+  Cont.Out(circle);
   cout << endl;
   
   cout << "rectangle:" << endl;
-  Cont.off(rectangle);
+  Cont.Out(rectangle);
   cout << endl;
 
   cout << "square:" << endl;
-  Cont.off(square);
+  Cont.Out(square);
   cout << endl;
 
   cout << "cube:" << endl;
-  Cont.off(cube);
+  Cont.Out(cube);
   cout << endl;
   
   cout << "triangle:" << endl;
-  Cont.off(triangle);
+  Cont.Out(triangle);
   
-  if (square.Perimeter() > cube.Perimeter())
+  if (square.Area() > cube.Area())
     Cont.Delete(cube);
   
-  if (square.Perimeter() < cube.Perimeter())
+  if (square.Area() < cube.Area())
     Cont.Delete(square);
   
   cout << " [___  Container ___] " << endl << Cont;

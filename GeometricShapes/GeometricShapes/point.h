@@ -15,7 +15,7 @@ public:
   Point(const Point& point);
   
   T Get();
-  float Perimeter() override;
+  float Area() override;
   
   ostream& print(ostream& off) override;
   bool operator ==(const Point& other);
@@ -46,7 +46,7 @@ inline T Point<T>::Get()
 }
 
 template<typename T>
-inline float Point<T>::Perimeter()
+inline float Point<T>::Area()
 {
   return 0;
 }

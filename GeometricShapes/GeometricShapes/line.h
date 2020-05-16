@@ -20,7 +20,7 @@ public:
 	T GetSign();
 	void SetLen(int leng);
 
-	float Perimeter() override;
+	float Area() override;
 	ostream& print(ostream& off) override;
 	bool operator == (const Line& other);
 };
@@ -40,7 +40,7 @@ inline Line<T>::Line(int len, T _sign)
 	length = len;
 	Array = new T[length];
 	for (int i = 0; i < length; i++)
-		Array[i] = _value;
+		Array[i] = _sign;
 }
 template<typename T>
 inline Line<T>::Line(const Line& line)
@@ -89,7 +89,7 @@ inline void Line<T>::SetLen(int len)
 }
 
 template<typename T>
-inline float Line<T>::Perimeter()
+inline float Line<T>::Area()
 {
 	return 0;
 }

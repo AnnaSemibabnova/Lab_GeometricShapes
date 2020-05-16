@@ -23,7 +23,7 @@ public:
   void Delete(A& elem);
   
   template <typename A>
-  void Off(A& elem);
+  void Out(A& elem);
   
   Shapes* operator[](const int i);
   friend ostream& operator<<(ostream& off, Container& other);
@@ -90,5 +90,20 @@ void Container::Delete(A& elem)
   Array = new Shapes * [size - 1];
   size = size - 1;
 }
+
+template<typename A>
+void Container::Out(A& elem)
+{
+	cout << elem;
+}
+ostream& operator<<(ostream& out, Container& other)
+{
+	for (int i = 0; i < other.size; i++)
+	{
+		out << *(other[i]) << endl;
+	}
+	return out;
+}
+
 
 

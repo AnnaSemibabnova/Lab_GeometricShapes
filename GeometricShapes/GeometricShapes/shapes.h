@@ -6,24 +6,24 @@ class Shapes
 {
 public:
   virtual ~Shapes() {}
-  virtual float Perimeter() = 0;
+  virtual float Area() = 0;
   virtual ostream& print(ostream& off) = 0;
   
-  friend ostream& operator<<(ostream& off, Shapes& another)
+  friend ostream& operator<<(ostream& off, Shapes& other)
   {
-    return another.print(off);
+    return other.print(off);
   }
   
   bool operator > (Shapes& other)
   {
-    if (this->Perimeter() > other.Perimeter())
+    if (this->Area() > other.Area())
       return true;
     return false;
   }
   
   bool operator < (Shapes& other)
   {
-    if (this->Perimeter() < other.Perimeter())
+    if (this->Area() < other.Area())
       return true;
     return false;
   }
