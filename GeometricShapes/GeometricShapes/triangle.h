@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Triangle :
   public  Shapes
 {
@@ -35,7 +35,7 @@ inline Triangle<char>::Triangle()
       Array[i][j] = '*';
 }
 
-template<typename T>
+template<class T>
 inline Triangle<T>::Triangle(int _height, T _sign)
 {
   height = _height + 1;
@@ -47,7 +47,7 @@ inline Triangle<T>::Triangle(int _height, T _sign)
       Array[i][j] = _sign;
 }
 
-template<typename T>
+template<class T>
 inline Triangle<T>::Triangle(const Triangle& triangle)
 {
   if (Array != 0)
@@ -65,7 +65,7 @@ inline Triangle<T>::Triangle(const Triangle& triangle)
       Array[i][j] = triangle.Array[i][j];
 }
 
-template<typename T>
+template<class T>
 inline Triangle<T>::~Triangle()
 {
   if (Array != 0)
@@ -78,19 +78,19 @@ inline Triangle<T>::~Triangle()
   }
 }
 
-template<typename T>
+template<class T>
 inline int Triangle<T>::GetHeight()
 {
   return height - 1;
 }
 
-template<typename T>
+template<class T>
 inline T Triangle<T>::GetSign()
 {
   return T();
 }
 
-template<typename T>
+template<class T>
 inline void Triangle<T>::SetHeight(int _height)
 {
   T tmp = this->GetSign();
@@ -109,13 +109,13 @@ inline void Triangle<T>::SetHeight(int _height)
       Array[i][j] = tmp;
 }
 
-template<typename T>
+template<class T>
 inline float Triangle<T>::Area()
 {
   return ((height - 1) * (height - 1)) / 2;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Triangle<T>::print(ostream& off)
 {
   for (int i = 0; i < height; i++)
@@ -127,7 +127,7 @@ inline ostream& Triangle<T>::print(ostream& off)
   return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Triangle<T>::operator == (const Triangle& other)
 {
   if (height == other.height && Array[0][0] == other.Array[0][0])

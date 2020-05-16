@@ -16,8 +16,8 @@ int main()
   Container Cont;
   Point <char> point;
   Line <char> line(8, '-');
-  Circle <char> circle(3, 'O');
-  Rectangle <int> rectangle(3, 7, 8);
+  Circle <char> circle(3, '*');
+  Rectangle <int> rectangle(3, 5, 1);
   Square <int> square(5, 1);
   Cube <char> cube(5, '*');
   Triangle <char> triangle(4, '^');

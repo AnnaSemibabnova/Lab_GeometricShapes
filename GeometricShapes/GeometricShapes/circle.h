@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Circle :
   public Shapes
 {
@@ -40,7 +40,7 @@ inline Circle<char>::Circle()
       Array[i][j] = '*';
 }
 
-template<typename T>
+template<class T>
 inline Circle<T>::Circle(int rad, T _sign)
 {
   radius = rad;
@@ -55,7 +55,7 @@ inline Circle<T>::Circle(int rad, T _sign)
       Array[i][j] = _sign;
 }
 
-template<typename T>
+template<class T>
 inline Circle<T>::Circle(const Circle& circle)
 {
   if (Array != 0)
@@ -75,7 +75,7 @@ inline Circle<T>::Circle(const Circle& circle)
     for (int j = 1 + i - radius; j < 3 * radius - 1 - i; j++)
       Array[i][j] = circle.Array[i][j];
 }
-template<typename T>
+template<class T>
 inline Circle<T>::~Circle()
 {
   if (Array != 0)
@@ -88,19 +88,19 @@ inline Circle<T>::~Circle()
   }
 }
 
-template<typename T>
+template<class T>
 inline int Circle<T>::GetRadius()
 {
   return radius;
 }
 
-template<typename T>
+template<class T>
 inline T Circle<T>::GetMark()
 {
   return Array[radius][radius];
 }
 
-template<typename T>
+template<class T>
 inline void Circle<T>::SetRadius(int _radius)
 {
   T tmp = this->GetMark();
@@ -122,13 +122,13 @@ inline void Circle<T>::SetRadius(int _radius)
       Array[i][j] = tmp;
 }
 
-template<typename T>
+template<class T>
 inline float Circle<T>::Area()
 {
   return radius * radius * 3.14;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Circle<T>::print(ostream& off)
 {
   for (int i = 0; i < 3 * radius - 1; i++)
@@ -144,7 +144,7 @@ inline ostream& Circle<T>::print(ostream& off)
   return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Circle<T>::operator == (const Circle& other)
 {
   if (radius == other.radius && Array[radius][radius] == other.Array[radius][radius])

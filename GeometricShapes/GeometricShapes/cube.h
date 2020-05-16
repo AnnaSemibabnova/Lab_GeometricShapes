@@ -4,7 +4,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Cube : 
 	public  Shapes
 {
@@ -26,7 +26,7 @@ public:
 	bool operator == (const Cube& other);
 };
 
-template<typename T>
+template<class T>
 inline Cube<T>::Cube()
 {
 	part = 1;
@@ -40,7 +40,7 @@ inline Cube<T>::Cube()
 	Array[0][0][0] = '*';
 }
 
-template<typename T>
+template<class T>
 inline Cube<T>::Cube(int a, T _sign)
 {
 	part = a;
@@ -57,7 +57,7 @@ inline Cube<T>::Cube(int a, T _sign)
 				Array[i][j][l] = _sign;
 }
 
-template<typename T>
+template<class T>
 inline Cube<T>::Cube(const Cube& cube)
 {
 	if (Array != 0)
@@ -83,7 +83,7 @@ inline Cube<T>::Cube(const Cube& cube)
 				Array[i][j][l] = cube.Array[i][j][l];
 }
 
-template<typename T>
+template<class T>
 inline Cube<T>::~Cube()
 {
 	if (Array != 0)
@@ -99,19 +99,19 @@ inline Cube<T>::~Cube()
 	}
 }
 
-template<typename T>
+template<class T>
 inline int Cube<T>::GetPart()
 {
 	return part;
 }
 
-template<typename T>
+template<class T>
 inline T Cube<T>::GetSign()
 {
 	return Array[0][0][0];
 }
 
-template<typename T>
+template<class T>
 inline void Cube<T>::SetPart(int _part)
 {
 	T tmp = Array[0][0][0];
@@ -138,13 +138,13 @@ inline void Cube<T>::SetPart(int _part)
 				Array[i][j][l] = tmp;
 }
 
-template<typename T>
+template<class T>
 inline float Cube<T>::Area()
 {
 	return part * part * 6;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Cube<T>::print(ostream& off)
 {
 	Square<T> tmp(part, Array[0][0][0]);
@@ -152,7 +152,7 @@ inline ostream& Cube<T>::print(ostream& off)
 	return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Cube<T>::operator == (const Cube& other)
 {
 	if (part == other.part && Array[0][0][0] == other.Array[0][0][0])

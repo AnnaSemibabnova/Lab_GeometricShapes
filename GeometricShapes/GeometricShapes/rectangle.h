@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Rectangle : 
   public  Shapes
 {
@@ -36,7 +36,7 @@ inline Rectangle<char>::Rectangle()
 
 }
 
-template<typename T>
+template<class T>
 inline Rectangle<T>::Rectangle(int _part1, int _part2, T _sign)
 {
   part1 = _part1;
@@ -50,7 +50,7 @@ inline Rectangle<T>::Rectangle(int _part1, int _part2, T _sign)
       Array[i][j] = _sign;
 }
 
-template<typename T>
+template<class T>
 inline Rectangle<T>::Rectangle(const Rectangle& rectangle)
 {
   if (Array != 0)
@@ -70,7 +70,7 @@ inline Rectangle<T>::Rectangle(const Rectangle& rectangle)
       Array[i][j] = rectangle.Array[i][j];
 }
 
-template<typename T>
+template<class T>
 inline Rectangle<T>::~Rectangle()
 {
   if (Array != 0)
@@ -84,25 +84,25 @@ inline Rectangle<T>::~Rectangle()
   }
 }
 
-template<typename T>
+template<class T>
 inline int Rectangle<T>::GetPart1()
 {
   return part1;
 }
 
-template<typename T>
+template<class T>
 inline int Rectangle<T>::GetPart2()
 {
   return part2;
 }
 
-template<typename T>
+template<class T>
 inline T Rectangle<T>::GetSign()
 {
   return Array[0][0];
 }
 
-template<typename T>
+template<class T>
 inline void Rectangle<T>::SetPart(int _part1, int _part2)
 {
   T tmp = Array[0][0];
@@ -123,13 +123,13 @@ inline void Rectangle<T>::SetPart(int _part1, int _part2)
       Array[i][j] = tmp;
 }
 
-template<typename T>
+template<class T>
 inline float Rectangle<T>::Area()
 {
   return part1 * part2;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Rectangle<T>::print(ostream& off)
 {
   for (int i = 0; i < part1; i++)
@@ -141,7 +141,7 @@ inline ostream& Rectangle<T>::print(ostream& off)
   return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Rectangle<T>::operator == (const Rectangle& other)
 {
   if (part1 == other.part1 && part2 == other.part2 && Array[0][0] == other.Array[0][0])

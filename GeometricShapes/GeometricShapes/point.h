@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Point :
   public  Shapes
 {
@@ -21,44 +21,44 @@ public:
   bool operator ==(const Point& other);
 };
 
-template<typename T>
+template<class T>
 inline Point<T>::Point()
 {
   sign = '.';
 }
 
-template<typename T>
+template<class T>
 inline Point<T>::Point(T _sign)
 {
   sign = _sign;
 }
 
-template<typename T>
+template<class T>
 inline Point<T>::Point(const Point& point)
 {
   sign = point.sign;
 }
 
-template<typename T>
+template<class T>
 inline T Point<T>::Get()
 {
   return sign;
 }
 
-template<typename T>
+template<class T>
 inline float Point<T>::Area()
 {
   return 0;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Point<T>::print(ostream& off)
 {
   off << this->Get();
   return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Point<T>::operator==(const Point& other)
 {
   if (sign == other.sign)

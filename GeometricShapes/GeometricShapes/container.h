@@ -16,13 +16,13 @@ public:
   Container();
   ~Container();
   
-  template <typename A>
+  template <class A>
   void Add(A& elem);
   
-  template <typename A>
+  template <class A>
   void Delete(A& elem);
   
-  template <typename A>
+  template <class A>
   void Out(A& elem);
   
   Shapes* operator[](const int i);
@@ -45,7 +45,7 @@ Shapes* Container::operator[](const int i)
   return Array[i];
 }
 
-template<typename A>
+template<class A>
 void Container::Add(A& elem)
 {
   Shapes** tmp = new Shapes * [size];
@@ -65,7 +65,7 @@ void Container::Add(A& elem)
   delete[]tmp;
 }
 
-template<typename A>
+template<class A>
 void Container::Delete(A& elem)
 {
   Shapes** tmp = new Shapes * [size];
@@ -91,7 +91,7 @@ void Container::Delete(A& elem)
   size = size - 1;
 }
 
-template<typename A>
+template<class A>
 void Container::Out(A& elem)
 {
 	cout << elem;

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Square : 
   public  Shapes
 {
@@ -32,7 +32,7 @@ inline Square<char>::Square()
   Array[0][0] = '*';
 }
 
-template<typename T>
+template<class T>
 inline Square<T>::Square(int a, T _sign)
 {
   part = a;
@@ -44,7 +44,7 @@ inline Square<T>::Square(int a, T _sign)
       Array[i][j] = _sign;
 }
 
-template<typename T>
+template<class T>
 inline Square<T>::Square(const Square& square)
 {
   if (Array != 0)
@@ -62,7 +62,7 @@ inline Square<T>::Square(const Square& square)
       Array[i][j] = square.Array[i][j];
 }
 
-template<typename T>
+template<class T>
 inline Square<T>::~Square()
 {
   if (Array != 0)
@@ -75,19 +75,19 @@ inline Square<T>::~Square()
   }
 }
 
-template<typename T>
+template<class T>
 inline int Square<T>::GetPart()
 {
   return part;
 }
 
-template<typename T>
+template<class T>
 inline T Square<T>::GetSign()
 {
   return Array[0][0];
 }
 
-template<typename T>
+template<class T>
 inline void Square<T>::SetPart(int _part)
 {
   T tmp = Array[0][0];
@@ -106,13 +106,13 @@ inline void Square<T>::SetPart(int _part)
       Array[i][j] = tmp;
 }
 
-template<typename T>
+template<class T>
 inline float Square<T>::Area()
 {
   return part * part;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Square<T>::print(ostream& off)
 {
   for (int i = 0; i < part; i++)
@@ -124,7 +124,7 @@ inline ostream& Square<T>::print(ostream& off)
   return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Square<T>::operator == (const Square& other)
 {
   if (part == other.part && Array[0][0] == other.Array[0][0])

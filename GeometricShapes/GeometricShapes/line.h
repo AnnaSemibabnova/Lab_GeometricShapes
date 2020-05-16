@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T>
+template <class T>
 class Line : 
 	public  Shapes
 {
@@ -25,7 +25,7 @@ public:
 	bool operator == (const Line& other);
 };
 
-template<typename T>
+template<class T>
 inline Line<T>::Line()
 {
 	length = 8;
@@ -34,7 +34,7 @@ inline Line<T>::Line()
 		Array[i] = "-";
 }
 
-template<typename T>
+template<class T>
 inline Line<T>::Line(int len, T _sign)
 {
 	length = len;
@@ -42,7 +42,7 @@ inline Line<T>::Line(int len, T _sign)
 	for (int i = 0; i < length; i++)
 		Array[i] = _sign;
 }
-template<typename T>
+template<class T>
 inline Line<T>::Line(const Line& line)
 {
 	if (Array != 0)
@@ -53,7 +53,7 @@ inline Line<T>::Line(const Line& line)
 		Array[i] = line.Array[i];
 }
 
-template<typename T>
+template<class T>
 inline Line<T>::~Line()
 {
 	if (Array != 0)
@@ -64,19 +64,19 @@ inline Line<T>::~Line()
 	}
 }
 
-template<typename T>
+template<class T>
 inline int Line<T>::GetLen()
 {
 	return length;
 }
 
-template<typename T>
+template<class T>
 inline T Line<T>::GetSign()
 {
 	return Array[0];
 }
 
-template<typename T>
+template<class T>
 inline void Line<T>::SetLen(int len)
 {
 	T tmp = Array[0];
@@ -88,13 +88,13 @@ inline void Line<T>::SetLen(int len)
 		Array[i] = tmp;
 }
 
-template<typename T>
+template<class T>
 inline float Line<T>::Area()
 {
 	return 0;
 }
 
-template<typename T>
+template<class T>
 inline ostream& Line<T>::print(ostream& off)
 {
 	for (int i = 0; i < length; i++)
@@ -103,7 +103,7 @@ inline ostream& Line<T>::print(ostream& off)
 	return off;
 }
 
-template<typename T>
+template<class T>
 inline bool Line<T>::operator==(const Line& other)
 {
 	if (length == other.length && Array[0] == other.Array[0])
